@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thesis Showcase | Kynn Elegado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">About Me</a></li>
+            <li><a href="project_catalog.html">Project Catalog</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="showcase-header">
+        <h1>Integrating a CNN Model for Food Recognition and Nutritional Analysis</h1>
+        <p>Thesis | Data Science & Computer Vision | 2025</p>
+    </header>
+
+    <main class="container">
+        <div class="showcase-content">
+            
+            <!-- 1. Overview & Problem -->
+            <section class="section-block">
+                <h2>Project Overview</h2>
+                <p>
+                    This thesis project focuses on <strong>integrating a CNN Model to enable personalized diet recommendations</strong>. 
+                    It is an end-to-end AI pipeline designed to identify food items from images and provide instant, 
+                    personalized nutritional feedback using Generative AI.
+                </p>
+            </section>
+
+            <!-- 2. Features -->
+            <section class="section-block">
+                <h2>Key Features</h2>
+                <ul>
+                    <li><strong>Object Detection:</strong> Implemented <strong>YOLOv8</strong> to identify multiple food items in real-time.</li>
+                    <li><strong>Generative AI Feedback:</strong> Engineered a Small Language Model (SLM) to analyze nutritional data output.</li>
+                    <li><strong>Personalization:</strong> Generates dietary feedback based on the recognized food and user data.</li>
+                    <li><strong>Mobile Target:</strong> Designed for deployment on mobile health applications.</li>
+                </ul>
+            </section>
+
+            <!-- 3. UPDATED CAROUSEL SECTION -->
+            <section class="section-block">
+                <h2>System Preview (Mobile UI)</h2>
+                <p style="margin-bottom: 20px; font-style: italic; text-align: center;">The gallery below auto-plays. Click arrows to navigate manually.</p>
+                
+                <!-- New Wrapper Layout: [Prev] [Image] [Next] -->
+                <div class="carousel-wrapper">
+                    
+                    <!-- Prev Button Outside -->
+                    <div class="carousel-btn" onclick="userClick(-1)">&#10094;</div>
+
+                    <!-- Image Container -->
+                    <div class="carousel-viewport">
+                        
+                        <!-- Slide 1 -->
+                        <div class="carousel-slide active">
+                            <img src="assets/ui1.jpg" alt="Login Screen">
+                            <div class="carousel-caption">1/6: Login Screen</div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="carousel-slide">
+                            <img src="assets/ui2.jpg" alt="Dashboard">
+                            <div class="carousel-caption">2/6: Dashboard Overview</div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="carousel-slide">
+                            <img src="assets/ui3.jpg" alt="Food Recognition">
+                            <div class="carousel-caption">3/6: Food Recognition Camera</div>
+                        </div>
+
+                        <!-- Slide 4 -->
+                        <div class="carousel-slide">
+                            <img src="assets/ui4.jpg" alt="Nutritional Analysis">
+                            <div class="carousel-caption">4/6: Nutritional Analysis</div>
+                        </div>
+
+                        <!-- Slide 5 -->
+                        <div class="carousel-slide">
+                            <img src="assets/ui5.jpg" alt="User Settings">
+                            <div class="carousel-caption">5/6: User Settings</div>
+                        </div>
+
+                        <!-- Slide 6 -->
+                        <div class="carousel-slide">
+                            <img src="assets/ui6.jpg" alt="Recommendation Output">
+                            <div class="carousel-caption">6/6: Recommendation Output</div>
+                        </div>
+
+                    </div>
+
+                    <!-- Next Button Outside -->
+                    <div class="carousel-btn" onclick="userClick(1)">&#10095;</div>
+
+                </div>
+            </section>
+
+            <!-- 4. Architecture -->
+            <section class="section-block">
+                <h2>System Architecture</h2>
+                <p>The project outlines a mobile application development process centered on food recognition using four key technical categories: Data & Processing, AI Training, Mobile Frontend, and Backend APIs.</p>
+                
+                <div style="text-align: center; margin-top: 20px;">
+                    <img src="assets/framework.png" alt="System Architecture Diagram" style="max-width: 100%; height: auto; border: 2px solid var(--navy); border-radius: 8px;">
+                </div>
+            </section>
+
+            <!-- 5. Development Process -->
+            <section class="section-block">
+                <h2>Development Process</h2>
+                <div class="tech-stack-list">
+                    <p><strong>Role:</strong> Lead AI Engineer / Researcher</p>
+                    <p><strong>Methodology:</strong> CRISP-DM</p>
+                    <p><strong>Tech Stack:</strong></p>
+                    <span>Python</span>
+                    <span>React Native</span>
+                    <span>FastAPI</span>
+                    <span>Supabase</span>
+                    <span>YOLOv8</span>
+                    <span>LM Studio</span>
+                    <span>Ngrok</span>
+                </div>
+                <br>
+                <p>
+                    The development process involved extensive experimentation with various CNN architectures 
+                    to optimize food item detection accuracy. The integration of Generative AI for nutritional 
+                    feedback required fine-tuning the SLM to ensure contextually relevant responses.
+                </p>
+            </section>
+
+            <div style="text-align: center;">
+                <a href="project_catalog.html" class="btn">&larr; Back to Catalog</a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Kynn Lyzander V. Elegado.</p>
+    </footer>
+
+    <!-- Updated JS for Auto-Play + Manual Control -->
+    <script>
+        let slideIndex = 1;
+        let slideTimer;
+
+        // Start the show immediately
+        showSlides(slideIndex);
+        
+        // Start auto-playing (3 seconds)
+        startAutoSlide();
+
+        function startAutoSlide() {
+            slideTimer = setInterval(function() {
+                plusSlides(1);
+            }, 3000); // 3000ms = 3 seconds
+        }
+
+        // Called when user clicks a button
+        function userClick(n) {
+            clearInterval(slideTimer); // Stop the auto-timer so it doesn't double jump
+            plusSlides(n);             // Move slide
+            startAutoSlide();          // Restart timer
+        }
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("carousel-slide");
+            
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+                slides[i].className = slides[i].className.replace(" active", "");
+            }
+            
+            slides[slideIndex-1].style.display = "block";
+            // Small delay to ensure display:block applies before adding opacity class (for fade)
+            setTimeout(() => {
+                slides[slideIndex-1].className += " active";
+            }, 10);
+        }
+    </script>
+
+</body>
+</html>

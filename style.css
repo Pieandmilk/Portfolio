@@ -1,0 +1,306 @@
+/* Palette: Oil 6 by GrafxKid 
+   Rustic & Retro Feel
+*/
+:root {
+    --cream: #fbf5ef;    /* Main Background */
+    --tan: #f2d3ab;      /* Secondary Background / Cards */
+    --pink: #c69fa5;     /* Borders / Accents */
+    --purple: #8b6d9c;   /* Buttons / Links */
+    --indigo: #494d7e;   /* Headings */
+    --navy: #272744;     /* Body Text / Footer */
+}
+
+/* Typography - Rustic Feel */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Lato:wght@400;700&display=swap');
+
+body {
+    background-color: var(--cream);
+    color: var(--navy);
+    font-family: 'Lato', sans-serif; /* Clean body text */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lora', serif; /* Rustic headers */
+    color: var(--indigo);
+    margin-top: 0;
+}
+
+/* Layout Utilities */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Navigation */
+nav {
+    background-color: var(--navy);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 4px solid var(--purple);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+}
+
+nav a {
+    color: var(--cream);
+    text-decoration: none;
+    font-family: 'Lora', serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--pink);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background-color: var(--purple);
+    color: var(--cream);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    border: 2px solid var(--navy);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--indigo);
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 0px var(--pink); /* Retro shadow */
+}
+
+/* --- PAGE SPECIFIC STYLES --- */
+
+/* About Page */
+.profile-section {
+    text-align: center;
+    background-color: var(--tan);
+    padding: 3rem;
+    border-radius: 8px;
+    border: 2px solid var(--pink);
+    margin-bottom: 2rem;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid var(--cream);
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-card {
+    background: white;
+    border: 2px solid var(--pink);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+/* Projects Catalog */
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: white;
+    border: 2px solid var(--indigo);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 6px 6px 0px var(--tan);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background-color: var(--tan); /* Placeholder color */
+    border-bottom: 2px solid var(--indigo);
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+/* Project Showcase (Detail Page) */
+.showcase-header {
+    background-color: var(--indigo);
+    color: var(--cream);
+    padding: 3rem 2rem;
+    text-align: center;
+    border-bottom: 6px solid var(--purple);
+}
+
+.showcase-header h1 { color: var(--cream); }
+
+.showcase-content {
+    background: white;
+    border: 2px solid var(--tan);
+    padding: 2rem;
+    margin-top: -2rem; /* Overlap effect */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.section-block {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px dashed var(--pink);
+}
+
+.section-block:last-child { border-bottom: none; }
+
+.tech-stack-list span {
+    display: inline-block;
+    background-color: var(--tan);
+    padding: 5px 10px;
+    margin-right: 5px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    border: 1px solid var(--pink);
+}
+
+.architecture-img {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin: 20px auto;
+    border: 2px solid var(--navy);
+    padding: 10px;
+    background: var(--cream);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--navy);
+    color: var(--tan);
+    margin-top: 3rem;
+}
+
+
+/* --- UPDATED CAROUSEL STYLES --- */
+
+/* Wrapper to hold Button - Image - Button in a row */
+.carousel-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Space between buttons and image */
+    max-width: 500px; /* Max width including buttons */
+    margin: 0 auto;
+}
+
+/* The box containing the images */
+.carousel-viewport {
+    position: relative;
+    width: 300px; /* Fixed width for mobile screens */
+    border: 4px solid var(--navy);
+    border-radius: 12px;
+    background-color: var(--navy);
+    box-shadow: 8px 8px 0px var(--tan); /* Rustic shadow */
+    overflow: hidden;
+}
+
+.carousel-slide {
+    display: none; /* Hide all by default */
+    background: white;
+}
+
+.carousel-slide.active {
+    display: block; /* Show only the active one */
+    animation: fadeEffect 0.8s; /* Smooth fade */
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* The External Buttons */
+.carousel-btn {
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    background-color: var(--purple);
+    color: var(--cream);
+    border: 2px solid var(--navy);
+    border-radius: 50%; /* Circular buttons */
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+    box-shadow: 2px 2px 0px var(--navy);
+    user-select: none;
+}
+
+.carousel-btn:hover {
+    background-color: var(--indigo);
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 0px var(--pink);
+}
+
+.carousel-btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.carousel-caption {
+    text-align: center;
+    background-color: var(--navy);
+    color: var(--cream);
+    padding: 10px;
+    font-family: 'Lora', serif;
+    font-size: 0.85rem;
+}
+
+@keyframes fadeEffect {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@media (max-width: 500px) {
+    .carousel-wrapper {
+        gap: 5px;
+    }
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+}
